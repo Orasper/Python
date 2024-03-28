@@ -1,0 +1,29 @@
+from random import randint
+
+estimado = 0
+intentos = 0
+numero_secreto = randint(1, 100)
+
+
+nombre = input("¿cual es tu nombre?")
+
+print(f"Bueno entonces {
+      nombre} he pensado un número entre 1 y 100 y tienes solo ocho intentos, para adivinar cuál crees que es el número")
+
+while intentos < 8:
+    estimado = int(input("Cual es el numero: "))
+    intentos += 1
+
+    if estimado not in range(1, 101):
+        print("Tu numero no se encuentra en el rango del 1 al 100")
+    elif estimado < numero_secreto:
+        print("Mi numero es mas alto")
+    elif estimado > numero_secreto:
+        print("Mi numero es mas bajo")
+    else:
+        print(f"Felicitaciones {nombre} has adivinado en {intentos} intentos")
+        break
+
+if estimado != numero_secreto:
+    print(f"Lo siento se han agotado los intentos. El numero secreto era {
+          numero_secreto}")
